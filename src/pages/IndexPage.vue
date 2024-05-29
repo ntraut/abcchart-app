@@ -2,20 +2,12 @@
   <q-page class="flex flex-center">
     <q-stepper
       v-model="activeStep"
+      ref="stepper"
       header-nav
       animated
     >
-      <q-step title="Event Type" name="eventType">
-        <q-page>
-          <router-link to="/selectStudent">
-          <img
-            alt="Quasar logo"
-            src="~assets/quasar-logo-vertical.svg"
-            style="width: 200px; height: 200px"
-          >
-          </router-link>
-          <!-- Add content for Step 1 -->
-        </q-page>
+      <q-step title="Gestion / Prevention" name="gestionPrevention">
+        <gestion-prevention />
       </q-step>
       <q-step title="Select Student" name="selectStudent">
         <select-student />
@@ -32,10 +24,12 @@
 
 <script setup>
 import { ref } from 'vue'
+import GestionPrevention from './GestionPrevention.vue'
 import SelectStudent from './SelectStudent.vue'
 
 defineOptions({
   name: 'IndexPage'
 })
-const activeStep = ref('eventType')
+
+const activeStep = ref('gestionPrevention')
 </script>
