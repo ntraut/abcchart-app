@@ -18,9 +18,10 @@
 </template>
 
 <script setup>
-defineProps({
+const props = defineProps({
   students: Array,
-  modelValue: Object
+  modelValue: Object,
+  stepper: Object
 })
 
 const emit = defineEmits(['update:modelValue'])
@@ -28,6 +29,7 @@ const emit = defineEmits(['update:modelValue'])
 function selectStudent (student, event) {
   event?.stopPropagation()
   emit('update:modelValue', student)
+  props.stepper.next()
 }
 </script>
 

@@ -10,10 +10,10 @@
         <gestion-prevention />
       </q-step>
       <q-step title="Student" name="selectStudent">
-        <select-student :students="students" v-model:modelValue="selectedStudent"/>
+        <select-student :students="students" v-model:modelValue="selectedStudent" :stepper="$refs.stepper" />
       </q-step>
       <q-step title="Teacher" name="selectTeacher">
-        <select-teacher :teachers="teachers" v-model:modelValue="selectedTeacher"></select-teacher>
+        <select-teacher :teachers="teachers" v-model:modelValue="selectedTeacher" />
       </q-step>
     </q-stepper>
   </q-page>
