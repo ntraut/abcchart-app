@@ -7,7 +7,7 @@
       animated
     >
       <q-step title="Gestion / Prevention" name="gestionPrevention">
-        <gestion-prevention />
+        <gestion-prevention :stepper="$refs.stepper"/>
       </q-step>
       <q-step title="Student" name="selectStudent">
         <select-student :students="students" v-model:modelValue="selectedStudent" :stepper="$refs.stepper" />
@@ -29,7 +29,7 @@ defineOptions({
   name: 'IndexPage'
 })
 
-const activeStep = ref('gestionPrevention')
+const activeStep = ref(null)
 const selectedStudent = ref(null) // Initially, no student is selected
 const selectedTeacher = ref(null) // Initially, no student is selected
 

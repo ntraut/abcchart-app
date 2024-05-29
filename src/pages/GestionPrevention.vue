@@ -1,13 +1,19 @@
 <template>
 
   <div class="q-pa-md q-gutter-md">
-    <q-btn color="deep-orange" label="Gestion" />
-    <q-btn color="light-green" label="Prevention" />
+    <q-btn color="deep-orange" @click="selectRoomPurpose(true)" label="Gestion" />
+    <q-btn color="light-green" @click="selectRoomPurpose(false)" label="Prevention" />
   </div>
 
 </template>
 
 <script setup>
-/* import { ref } from 'vue' */
-/* import IndexPage from './IndexPage.vue' */
+const props = defineProps({
+  stepper: Object
+})
+
+function selectRoomPurpose (isGestion) {
+  console.log(isGestion) // TD: keep track of the flag isGestion
+  props.stepper.next()
+}
 </script>
